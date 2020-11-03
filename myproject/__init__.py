@@ -3,8 +3,11 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_login import LoginManager,current_user
+from flask_restful import Api
+
 
 app = Flask(__name__)
+
 
 # თუ კონფიგურაციისათვის იყენებთ ბევრ პარამეტრს სასურველია მათი config.py ფაილში გადანაწილება 
 app.config['SECRET_KEY'] = 'mysecretkey'
@@ -28,3 +31,8 @@ from myproject.models import Post
 app.register_blueprint(auth_blueprint,url_prefix="/")
 app.register_blueprint(navbar_blueprint,url_prefix="/")
 app.register_blueprint(index_blueprint,url_prefix="/")
+
+
+from myproject.resources.PostsApi import PostsApi
+api = Api(app)
+api.add_resource(PostsApi,'/getPosts')
