@@ -43,6 +43,7 @@ class Post(db.Model):
     reaction = db.Column(db.Integer)  # raodenoba ramdeni mowoneba aqvs
     #comment = db.relationship('comment', backref="posts")
     author_id = db.Column(db.Integer,db.ForeignKey("gamers.id"))
+    author = db.relationship(Gamer)
 
     def __init__(self, title, text,gamer_id):
         self.title = title
@@ -51,6 +52,3 @@ class Post(db.Model):
 
     def __repr__(self):
         return f"Post ID: {self.id} -- Date: {self.date} --- {self.title}"
-
-    def author_name(self):
-        return "Unknown"

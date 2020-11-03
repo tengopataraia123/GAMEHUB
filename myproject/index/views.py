@@ -11,7 +11,7 @@ index_blueprint = Blueprint("index",__name__,template_folder="templates/index")
 def index():
 
     form = PostForm()
-    posts = Post.query.all()
+    posts = Post.query.order_by(Post.id.desc()).all()
 
     if form.validate_on_submit():
 

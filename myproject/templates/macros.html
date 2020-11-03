@@ -10,7 +10,7 @@
 <div class="box2">
   <div>
           <img class="piconTortura" src="{{ url_for('static', filename='images/Zappa.jpg') }}" alt="zappa">
-          Written By: {{post.author_name()}}
+          Written By: {{post.author.name}}
   </div>
   <div class="pHeader"> {{ post.title }}</div>
   <hr>
