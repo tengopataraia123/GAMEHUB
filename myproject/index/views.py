@@ -11,7 +11,6 @@ index_blueprint = Blueprint("index",__name__,template_folder="templates/index")
 def index():
 
     form = PostForm()
-    posts = []#Post.query.order_by(Post.id.desc()).all()
 
     if form.validate_on_submit():
 
@@ -24,7 +23,7 @@ def index():
 
         return redirect(url_for("index.index"))
 
-    return render_template("index.html",form=form,posts=posts)
+    return render_template("index.html",form=form)
 
 @index_blueprint.route("/logout")
 def logout():
