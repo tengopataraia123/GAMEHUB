@@ -3,14 +3,19 @@ from myproject.models import Post
 
 class PostsApi(Resource):
     parser = reqparse.RequestParser()
-    index = 0
-    parser.add_argument("count",type=int,required=True)
+    parser.add_argument("start",type=int,required=True)
+    parser.add_argument("end",type=int,required=True)
 
     def get(self):
-        count = self.parser.parse_args()["count"]
-        posts = Post.query.order_by(Post.id.desc()).all()[self.index:self.index+count]
-
+        start = self.parser.parse_args()["start"]
+        end = self.parser.parse_args()["end"]
+        
+        if start < len(Post.query.all()):
+            posts = Post.query.order_by(Post.id.desc()).all()[start:end]
+        else:
+            posts = []
         posts_json = []
+        
         for post in posts:
             posts_json.append({
                 "id":post.id,
@@ -20,6 +25,4 @@ class PostsApi(Resource):
                 "reaction":post.reaction,
                 "author":post.author.name
             })
-
-        self.index += count
         return posts_json

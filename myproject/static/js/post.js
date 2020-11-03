@@ -1,7 +1,8 @@
 const count = 8;
+var index = 0;
 
 function addPosts(){
-    fetch(`/getPosts?count=${count}`).then((data) => {
+    fetch(`/getPosts?start=${index}&end=${index+count}`).then((data) => {
         return data.json();
     }).then((data) => {
         
@@ -34,11 +35,12 @@ function addPosts(){
 
         });
     });    
+    index += count;
 }
 
 document.onscroll = function(){
     var postCont = document.getElementById("post-container");
-    if (document.documentElement.scrollTop >= postCont.scrollHeight-100){
+    if (document.documentElement.scrollTop >= postCont.scrollHeight-450){
         addPosts();
     }
 }
