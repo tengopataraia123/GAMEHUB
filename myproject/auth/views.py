@@ -29,5 +29,5 @@ def auth():
         if gamer.check_password(loginForm.password.data) and gamer is not None:
             login_user(gamer)
             flash('Log in Success!')
-            return redirect(url_for("index"))
+            return redirect(url_for("index.index"))
     return render_template('auth.html', regForm=registrationForm,loginForm=loginForm)
