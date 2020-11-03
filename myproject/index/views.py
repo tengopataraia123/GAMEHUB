@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template,redirect,url_for
 from myproject.index.forms import PostForm
 from myproject.models import Post,Gamer
-from flask_login import current_user
+from flask_login import current_user,logout_user
 from myproject import db
 
 index_blueprint = Blueprint("index",__name__,template_folder="templates/index")
@@ -25,3 +25,8 @@ def index():
         return redirect(url_for("index.index"))
 
     return render_template("index.html",form=form,posts=posts)
+
+@index_blueprint.route("/logout")
+def logout():
+    logout_user()
+    return redirect(url_for("index.index"))

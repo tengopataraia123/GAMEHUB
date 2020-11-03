@@ -30,7 +30,7 @@
                                                 <li class="flex eng">eng <img src="{{ url_for('static', filename='images/Polygon3.svg') }}" alt="triangle"></li>
                                                 {% if current_user.is_authenticated %}
                                                 <li >
-                                                        <a href='#'><img class="useravatar" src="{{ url_for('static', filename='avatars/Ninja.jpg') }}" alt="avatar"></a>
+                                                        <a href='/logout'><img class="useravatar" src="{{ url_for('static', filename='avatars/Ninja.jpg') }}" alt="avatar"></a>
                                                 </li>
                                                 {% else %}
                                                 <li >
@@ -47,11 +47,11 @@
                                         <ul class="header-ul">
                                                 {% if current_user.is_authenticated %}
                                                 <li >
-                                                       <a href="#"><img class="useravatar" src="{{ url_for('static', filename='avatars/Ninja.jpg') }}" alt="avatar"></a>
+                                                       <a href="/logout"><img class="useravatar" src="{{ url_for('static', filename='avatars/Ninja.jpg') }}" alt="avatar"></a>
                                                 </li>
                                                 {% else %}
                                                 <li >
-                                                        <a href='registration.html'><img class="useravatar" src="{{ url_for('static', filename='images/useravatar.png') }}" alt="avatar"></a>
+                                                        <a href='/auth'><img class="useravatar" src="{{ url_for('static', filename='images/useravatar.png') }}" alt="avatar"></a>
                                                 </li>
                                                 {% endif %}
                                                 <li class="flex searchlogo"><img src="{{ url_for('static', filename='images/search.svg') }}" alt="search"></li>
