@@ -22,13 +22,21 @@
         <header>
                 <div class="header">
                         <div class="header-block">
-                                <a href="{{url_for('index')}}" class="logo">gamehub</a>
+                                <a href="{{url_for('index.index')}}" class="logo">gamehub</a>
                                 <div>
                                         <ul class="header-ul">
                                                 <li class="flex searchlogo"><img src="{{ url_for('static', filename='images/search.svg') }}" alt="search"></li>
                                                 <li class="flex donate"><a class="donation" href="#">donate</a></li>
                                                 <li class="flex eng">eng <img src="{{ url_for('static', filename='images/Polygon3.svg') }}" alt="triangle"></li>
-                                                <li ><a href='/auth'><img class="useravatar" src="{{ url_for('static', filename='images/useravatar.png') }}" alt="avatar"></a></li>
+                                                {% if current_user.is_authenticated %}
+                                                <li >
+                                                        <a href='#'><img class="useravatar" src="{{ url_for('static', filename='avatars/Ninja.jpg') }}" alt="avatar"></a>
+                                                </li>
+                                                {% else %}
+                                                <li >
+                                                        <a href='/auth'><img class="useravatar" src="{{ url_for('static', filename='images/useravatar.png') }}" alt="avatar"></a>
+                                                </li>
+                                                {% endif %}
                                         </ul>
                                 </div>
                         </div>
@@ -37,7 +45,15 @@
                         <div class="header-block">
                                 <div>
                                         <ul class="header-ul">
-                                                <li ><a href='registration.html'><img class="useravatar" src="{{ url_for('static', filename='images/useravatar.png') }}" alt="avatar"></a></li>
+                                                {% if current_user.is_authenticated %}
+                                                <li >
+                                                       <a href="#"><img class="useravatar" src="{{ url_for('static', filename='avatars/Ninja.jpg') }}" alt="avatar"></a>
+                                                </li>
+                                                {% else %}
+                                                <li >
+                                                        <a href='registration.html'><img class="useravatar" src="{{ url_for('static', filename='images/useravatar.png') }}" alt="avatar"></a>
+                                                </li>
+                                                {% endif %}
                                                 <li class="flex searchlogo"><img src="{{ url_for('static', filename='images/search.svg') }}" alt="search"></li>
                                                 <li class="logo-2"><a href="index.html" class="logo">gamehub</a></li>
                                                 <li class="flex eng">eng <img src="{{ url_for('static', filename='images/Polygon3.svg') }}" alt="triangle"></li>
@@ -60,9 +76,6 @@
                         
                 </nav>
         </header>
-
-        {% block content %}
-
         <div>
                 <div class="m-section"></div>
                 <div class="nrow">
@@ -137,9 +150,6 @@
                         </section>
                 </div>
         </div>
-
-        {% endblock %}
-
         <footer>
                 <div class="footer">
                         <div class="contain">

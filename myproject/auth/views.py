@@ -18,6 +18,7 @@ def auth():
         gamer = Gamer(name=registrationForm.username.data,
                         email=registrationForm.email.data,
                         password=registrationForm.password.data)
+        gamer.photo = "/avatars/Ninja.jpg"
         print(registrationForm.email.data,registrationForm.username.data,registrationForm.password.data)
         db.session.add(gamer)
         db.session.commit()
