@@ -22,7 +22,8 @@
         <link rel="stylesheet" type="text/css" href="url_for('static',filename='css/reset.css')}}">
         <link rel="stylesheet" type="text/css" href="assets/css/style.css">
         <link rel="stylesheet" type="text/css" href="assets/css/fonts.css">
-		<link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
 </head>
 <body>
@@ -35,7 +36,40 @@
                                                 <li class="flex searchlogo"><img src="{{ url_for('static', filename='images/search.svg') }}" alt="search"></li>
                                                 <li class="flex donate"><a class="donation" href="#">donate</a></li>
                                                 <li class="flex eng">eng <img src="{{ url_for('static', filename='images/Polygon3.svg') }}" alt="triangle"></li>
-                                                <li ><a href='registration.html'><img class="useravatar" src="{{ url_for('static', filename='images/useravatar.png') }}" alt="avatar"></a></li>
+                                                <li >
+                                                        <nav class="dddnav">
+                                                                <div class="navcontainer">
+
+                                                                        <nav class="navinner">
+
+                                                                               <!--  <a href="javascript:void(0)" class="ddtriggermobile"><i class="material-icons">menu</i></a> -->
+                                                                                <a href="#0" class="profileddtrigger"><img src="assets/images/zappa.jpg" /></a>
+                                                                                <!-- mobile main menu-->
+                                                                                <div class="ddcontainer mobilemenudd">
+                                                                                        <nav class="ddnav">
+                                                                                                <a href="#0"><span class="material-icons">dashboard</span><span>Dashboard</span></a>
+                                                                                                <a href="#0"><span class="material-icons">search</span><span>Search</span></a>
+                                                                                                <a href="#0"><span class="material-icons">insert_drive_file</span><span>Drafts</span></a>
+                                                                                        </nav>
+                                                                                </div>
+                                                              <!-- dropdown profile menu -->
+                                                                                <div class="ddcontainer profiledd">
+                                                                                        <a href="profile.html" class="ddheader">
+                                                                                                <img src="assets/images/zappa.jpg" />
+                                                                                                <h5 class="ddname">Marvel</h5><span class="ddtitle">Gamer</span>
+                                                                                        </a>
+                                                                                        <nav class="ddnav">
+                                                                                                <a href="notification.html"><span class="material-icons">notifications</span><span>Notifications</span></a>
+                                                                                                <a href="settings.html"><span class="material-icons">settings</span><span>Settings</span></a>
+                                                                                                <a href="support.html"><span class="material-icons">phone</span><span>Support</span></a>
+                                                                                                <a href="#"><span class="material-icons">exit_to_app</span><span>Logout</span></a>
+                                                                                        </nav>
+                                                                                </div>
+                                                                        </nav>
+                                                                </div>
+                                                        </nav>
+                                                </li>
+<!--                                                <li ><a href='registration.html'><img class="useravatar" src="{{ url_for('static', filename='images/useravatar.png') }}" alt="avatar"></a></li>-->
                                         </ul>
                                 </div>
                         </div>
@@ -281,5 +315,6 @@
                 <div class="copyright">Copyright © 2010-2020 Freepik Company S.L. All rights reserved.</div>
 
         </footer>
+        
 </body>
 </html>

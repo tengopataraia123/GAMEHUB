@@ -16,6 +16,9 @@
        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/reset.css') }}">
        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/fonts.css') }}">
+       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+       <link href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
        <script src="{{url_for('static',filename='/js/post.js')}}"></script>
 </head>
 <body>
@@ -30,7 +33,37 @@
                                                 <li class="flex eng">eng <img src="{{ url_for('static', filename='images/Polygon3.svg') }}" alt="triangle"></li>
                                                 {% if current_user.is_authenticated %}
                                                 <li >
-                                                        <a href='/logout'><img class="useravatar" src="{{ url_for('static', filename='avatars/Ninja.jpg') }}" alt="avatar"></a>
+                                                        <nav class="dddnav">
+                                                                <div class="navcontainer">
+
+                                                                        <nav class="navinner">
+
+                                                                               <!--  <a href="javascript:void(0)" class="ddtriggermobile"><i class="material-icons">menu</i></a> -->
+                                                                                <a href="#0" class="profileddtrigger"><img src="{{url_for('static',filename='images/zappa.jpg')}}" /></a>
+                                                                                <!-- mobile main menu-->
+                                                                                <div class="ddcontainer mobilemenudd">
+                                                                                        <nav class="ddnav">
+                                                                                                <a href="#0"><span class="material-icons">dashboard</span><span>Dashboard</span></a>
+                                                                                                <a href="#0"><span class="material-icons">search</span><span>Search</span></a>
+                                                                                                <a href="#0"><span class="material-icons">insert_drive_file</span><span>Drafts</span></a>
+                                                                                        </nav>
+                                                                                </div>
+                                                              <!-- dropdown profile menu -->
+                                                                                <div class="ddcontainer profiledd">
+                                                                                        <a href="profile.html" class="ddheader">
+                                                                                                <img src="{{url_for('static',filename='images/zappa.jpg')}}" />
+                                                                                                <h5 class="ddname">Marvel</h5><span class="ddtitle">Gamer</span>
+                                                                                        </a>
+                                                                                        <nav class="ddnav">
+                                                                                                <a href="notification.html"><span class="material-icons">notifications</span><span>Notifications</span></a>
+                                                                                                <a href="settings.html"><span class="material-icons">settings</span><span>Settings</span></a>
+                                                                                                <a href="support.html"><span class="material-icons">phone</span><span>Support</span></a>
+                                                                                                <a href="#"><span class="material-icons">exit_to_app</span><span>Logout</span></a>
+                                                                                        </nav>
+                                                                                </div>
+                                                                        </nav>
+                                                                </div>
+                                                        </nav>
                                                 </li>
                                                 {% else %}
                                                 <li >
@@ -47,7 +80,37 @@
                                         <ul class="header-ul">
                                                 {% if current_user.is_authenticated %}
                                                 <li >
-                                                       <a href="/logout"><img class="useravatar" src="{{ url_for('static', filename='avatars/Ninja.jpg') }}" alt="avatar"></a>
+                                                        <nav class="dddnav">
+                                                                <div class="navcontainer">
+
+                                                                        <nav class="navinner">
+
+                                                                               <!--  <a href="javascript:void(0)" class="ddtriggermobile"><i class="material-icons">menu</i></a> -->
+                                                                                <a href="#0" class="profileddtrigger"><img src="{{url_for('static',filename='images/zappa.jpg')}}" /></a>
+                                                                                <!-- mobile main menu-->
+                                                                                <div class="ddcontainer mobilemenudd">
+                                                                                        <nav class="ddnav">
+                                                                                                <a href="#0"><span class="material-icons">dashboard</span><span>Dashboard</span></a>
+                                                                                                <a href="#0"><span class="material-icons">search</span><span>Search</span></a>
+                                                                                                <a href="#0"><span class="material-icons">insert_drive_file</span><span>Drafts</span></a>
+                                                                                        </nav>
+                                                                                </div>
+                                                              <!-- dropdown profile menu -->
+                                                                                <div class="ddcontainer profiledd">
+                                                                                        <a href="profile.html" class="ddheader">
+                                                                                                <img src="{{url_for('static',filename='images/zappa.jpg')}}" />
+                                                                                                <h5 class="ddname">Marvel</h5><span class="ddtitle">Gamer</span>
+                                                                                        </a>
+                                                                                        <nav class="ddnav">
+                                                                                                <a href="notification.html"><span class="material-icons">notifications</span><span>Notifications</span></a>
+                                                                                                <a href="settings.html"><span class="material-icons">settings</span><span>Settings</span></a>
+                                                                                                <a href="support.html"><span class="material-icons">phone</span><span>Support</span></a>
+                                                                                                <a href="#"><span class="material-icons">exit_to_app</span><span>Logout</span></a>
+                                                                                        </nav>
+                                                                                </div>
+                                                                        </nav>
+                                                                </div>
+                                                        </nav>
                                                 </li>
                                                 {% else %}
                                                 <li >
@@ -87,9 +150,6 @@
                                                 {{form.hidden_tag()}}
                                                 <div class="post-title">
                                                         {{form.submit(class="submit-button")}}
-                                                        <!-- <input class="submit-button" type="submit" method="POST" value="Create a Post"> -->
-                                                        <!-- <a href="#"><i class="fa fa-pencil" aria-hidden="true"></i>Create a Post</a>
-                                                        <p><i class="fa fa-times" aria-hidden="true"></i></p> -->
                                                 </div>
                                                 <div id="post-body">
                                                         <label for="pTitle">
@@ -99,13 +159,6 @@
                                                         <div>
                                                                 {{form.text(class="textarea",placeholder="what's on you mind?")}}
                                                         </div>
-                                                        
-                                                        <!-- <label for="pTitle">
-                                                                <input class="p-Title" type="text" placeholder="Title" name="title" >
-                                                        </label>
-                                                        <div class="textarea">
-                                                                <textarea name="text" onkeyup="InputAdjust(this)" placeholder="what's on you mind?"></textarea>
-                                                        </div> -->
                                                 </div>
                                         </form>
                                 </div>
@@ -194,9 +247,9 @@
                 <div class="copyright">Copyright © 2010-2020 Freepik Company S.L. All rights reserved.</div>
 
         </footer>
-        <script>
-                
+        <script>                
                 addPosts()
         </script>
+        <script type="text/javascript" src="{{ url_for('static',filename='js/profilebar.js')}}"></script>
 </body>
 </html>
