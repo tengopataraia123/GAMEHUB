@@ -2228,7 +2228,7 @@ background-color:#dddfe2;
   background: #f7f7f7;
 }
 
-.ddheader img {
+.ddheader img{
   border-radius: 50%;
   height: 52px;
 }
@@ -2277,7 +2277,7 @@ background-color:#dddfe2;
 	height: 400px;
 }
 
-.user-prof-pic, .active-user{
+.user-prof-pic{
 	height: 170px;
 	width: 170px;
 	border-radius: 50%;
@@ -2286,10 +2286,6 @@ background-color:#dddfe2;
 }
 .user-prof-pic:hover{
 	border: solid 10px rgba(236, 236, 236, 0.25);
-}
-
-.active-user:hover{
-	border: solid 10px rgba(100, 225, 70, 0.5);
 }
 
 .user-profile-ul{

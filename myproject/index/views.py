@@ -7,7 +7,6 @@ from myproject import db
 index_blueprint = Blueprint("index",__name__,template_folder="templates/index")
 
 @index_blueprint.route("/",methods=["GET","POST"])
-@index_blueprint.route("/index",methods=["GET","POST"])
 def index():
 
     form = PostForm()

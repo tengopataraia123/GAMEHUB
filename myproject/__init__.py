@@ -8,6 +8,7 @@ from flask_restful import Api
 
 app = Flask(__name__)
 
+active_users = []
 
 # თუ კონფიგურაციისათვის იყენებთ ბევრ პარამეტრს სასურველია მათი config.py ფაილში გადანაწილება 
 app.config['SECRET_KEY'] = 'mysecretkey'

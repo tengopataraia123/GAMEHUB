@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template,redirect,url_for,flash
-from myproject import db
+from myproject import db,active_users
 from myproject.models import Gamer
 from myproject.auth.forms import LoginForm, RegistrationForm
 from flask_login import login_user
@@ -8,6 +8,7 @@ auth_blueprint = Blueprint('auth', __name__, template_folder='templates/auth')
 
 @auth_blueprint.route("/auth",methods=["GET","POST"])
 def auth():
+    global active_users
 
     registrationForm = RegistrationForm()
     loginForm = LoginForm()
@@ -28,6 +29,7 @@ def auth():
         gamer = Gamer.query.filter_by(email = loginForm.email.data).first()
         if gamer.check_password(loginForm.password.data) and gamer is not None:
             login_user(gamer)
+            active_users.append(gamer.id)
             flash('Log in Success!')
             return redirect(url_for("index.index"))
     return render_template('auth.html', regForm=registrationForm,loginForm=loginForm)
