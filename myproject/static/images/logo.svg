@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35.355" height="43.284" viewBox="0 0 35.355 43.284">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="35.355" height="43.284" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Repeat_Grid_3" data-name="Repeat Grid 3" clip-path="url(#clip-path)">
+    <g transform="translate(-129.322 -3.716)">
+      <text id="CYBERG" transform="translate(131 44)" fill="#c60314" font-size="8" font-family="HelveticaNeueWorld-55Roman, Helvetica Neue World"><tspan x="0" y="0">CYBERG</tspan></text>
+      <path id="Path_14" data-name="Path 14" d="M5,0H20a5,5,0,0,1,5,5V16.389l-5.088,1.4L25,17.972V20a5,5,0,0,1-5,5H5a5,5,0,0,1-5-5V8.076L5.151,6.565,0,6.785H0V5A5,5,0,0,1,5,0Z" transform="translate(147 3.716) rotate(45)" fill="#c60314"/>
+      <path id="Path_16" data-name="Path 16" d="M6.609-2.156c.112,0,.113,2.159.538,2.188a6.515,6.515,0,0,1,5.8,5.6c.021.071,2.714.621,2.714,1.023,0,.165-2.662.173-2.706.648a6.471,6.471,0,0,1-5.574,5.637c-.077.022-.379,2.152-.783,2.152-.139,0-.371-2.1-.822-2.134A6.515,6.515,0,0,1,.02,7.018c0,.038-2.208-.363-2.208-.643,0-.146,2.192-.165,2.23-.622A6.519,6.519,0,0,1,5.768.041C5.8.029,6.254-2.156,6.609-2.156Z" transform="translate(140.5 15)" fill="#fff"/>
+    </g>
+  </g>
+</svg>
