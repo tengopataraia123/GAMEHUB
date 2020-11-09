@@ -28,6 +28,7 @@ from myproject.auth.views import auth_blueprint
 from myproject.navbar.views import navbar_blueprint
 from myproject.index.views import index_blueprint
 from myproject.profile.views import profile_blueprint
+from myproject.admin.views import admin_blueprint
 
 from myproject.models import Post
 
@@ -35,6 +36,7 @@ app.register_blueprint(auth_blueprint,url_prefix="/")
 app.register_blueprint(navbar_blueprint,url_prefix="/")
 app.register_blueprint(index_blueprint,url_prefix="/")
 app.register_blueprint(profile_blueprint,url_prefix="/")
+app.register_blueprint(admin_blueprint,url_prefix="/")
 
 
 from myproject.resources.PostsApi import PostsApi
