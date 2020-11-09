@@ -6,7 +6,7 @@ from flask_login import current_user
 from myproject.models import Gamer
 
 class LoginForm(FlaskForm):
-    email = StringField('Email',validators=[DataRequired(),Email()])
+    email = StringField('Email',validators=[DataRequired()])
     password = PasswordField('Password',validators=[DataRequired()])
     submit = SubmitField('Sign In')
 

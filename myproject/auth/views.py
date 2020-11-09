@@ -26,8 +26,8 @@ def auth():
         flash('Thanks for registration!')
         return redirect(url_for('auth.auth'))
     if loginForm.validate_on_submit():
-        gamer = Gamer.query.filter_by(email = loginForm.email.data).first() || Gamer.query.filter_by(name = loginForm.email.data).first()
-        if gamer.check_password(loginForm.password.data) and gamer is not None:
+        gamer = Gamer.query.filter_by(email = loginForm.email.data).first() or Gamer.query.filter_by(name = loginForm.email.data).first()
+        if gamer and gamer.check_password(loginForm.password.data) is not None:
             login_user(gamer)
             active_users.append(gamer.id)
             flash('Log in Success!')
