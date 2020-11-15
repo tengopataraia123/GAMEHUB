@@ -2,7 +2,7 @@ from flask import Blueprint, render_template,redirect,url_for,flash
 from myproject import db,active_users
 from myproject.models import Gamer
 from myproject.auth.forms import LoginForm, RegistrationForm
-from flask_login import login_user
+from flask_login import login_user,logout_user,current_user
 
 auth_blueprint = Blueprint('auth', __name__, template_folder='templates/auth')
 
@@ -33,3 +33,12 @@ def auth():
             flash('Log in Success!')
             return redirect(url_for("index.index"))
     return render_template('auth.html', regForm=registrationForm,loginForm=loginForm)
+
+@auth_blueprint.route("/logout")
+def logout():
+    try:
+        active_users.remove(current_user.id)
+    except:
+        pass
+    logout_user()
+    return redirect(url_for("index.index"))

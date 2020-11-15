@@ -1,4 +1,9 @@
 {% extends 'base.html' %}
+
+{% block scripts %}
+<script src="{{url_for('static',filename='/js/post.js')}}"></script>
+{% endblock %}
+
 {% block content %}
         <div>
                 <div class="m-section"></div>
@@ -6,23 +11,48 @@
                         <section class="ncolumn">
                                 
                                 {% if current_user.is_authenticated%}
-                                <div class="mainDiv">
+
+                                <div class="box1">
+                                        
+                                        <a href="{{url_for('profile.profile_view',user_id=current_user.id)}}" style="flex: 2%;"><img class="postimage" src="{{url_for('static',filename=current_user.photo)}}"></a>
+                                        <div style="flex: 90%;">
+                                            <label id="myBtn" for="Post">
+                                                <input class="question" type="text" autocomplete="off" placeholder="What's on your mind?" name="Post">
+                                            </label>
+                                        </div>
+                                    </div>
+    
+    
+                                   <div id="myModal" class="modal">
                                         <form method="POST">
                                                 {{form.hidden_tag()}}
-                                                <div class="post-title">
-                                                        {{form.submit(class="submit-button")}}
-                                                </div>
-                                                <div id="post-body">
-                                                        <label for="pTitle">
-                                                                {{form.title(class="p-Title",placeholder="Title")}}
-                                                        </label>
-                                                        
-                                                        <div>
-                                                                {{form.text(class="textarea",placeholder="what's on you mind?")}}
+                                                <div class="crt-box-post">
+                                                        <div class="modal-content">
+                                                            <span class="close">&times;</span>
+                                                            <p>Create Post</p>
                                                         </div>
-                                                </div>
+                                                        <hr style="margin: auto;">
+                                                        <div class="crt-post-image">
+                                                            <a href="{{url_for('profile.profile_view',user_id=current_user.id)}}"><img src="{{url_for('static',filename=current_user.photo)}}"></a>
+                                                            <p>{{current_user.name}}</p>
+                                                        </div>
+                                                            {{form.text(class="userpost-text",placeholder="what's on you mind?")}}
+                                                        <div class="addypost">
+                                                            <p>Add to Your Post</p>
+                                                            <div>
+                                                                <a href="#"><img src="assets/images/tag.png"></a>
+                                                                <a href="#"><img src="assets/images/location.png"></a>
+                                                                <a href="#"><img src="assets/images/album.png"></a>
+                                                                <a href="#"><img src="assets/images/video.png"></a>
+                                                                <a href="#"><img src="assets/images/points.svg"></a>
+                                                            </div>
+                                                        </div>
+                                                        <a href="#"><button class="posting-button">Post</button></a>
+                                                    </div>
                                         </form>
-                                </div>
+                                    </div>
+
+
                                 {% endif %}
 
                                 <div id="post-container">
@@ -67,5 +97,7 @@
         <script>                
                 addPosts()
         </script>
+        <script src="{{url_for('static',filename='js/newpost.js')}}"></script>
+        <script src="{{url_for('static',filename='js/postbar.js')}}"></script>
 
 {% endblock %}
